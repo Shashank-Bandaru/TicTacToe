@@ -174,11 +174,12 @@ class _HomePageState extends State<HomePage1> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("VS Computer Mode"),
+          title: new Text("VS Computer Mode(easy)"),
           backgroundColor: Colors.lightBlueAccent,
           centerTitle: true,
         ),
@@ -186,6 +187,17 @@ class _HomePageState extends State<HomePage1> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            SizedBox(height: 20),
+            Text(
+              'Player 1 : User (X)',
+              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Player 2 : Computer (O)',
+              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 50),
             new Expanded(
               child: new GridView.builder(
                 padding: const EdgeInsets.all(10.0),
@@ -217,16 +229,23 @@ class _HomePageState extends State<HomePage1> {
                 ),
               ),
             ),
-            new ElevatedButton(
-              child: new Text(
-                "Reset",
-                style: new TextStyle(color: Colors.white, fontSize: 20.0),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: new ElevatedButton(
+                child: new Text(
+                  "Reset",
+                  style: new TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:Colors.red,
+                  padding: const EdgeInsets.all(20.0)
+                ),
+                onPressed: (){
+                  setState(() {
+                    buttonsList = doInit();
+                  });
+                },
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor:Colors.red,
-                padding: const EdgeInsets.all(20.0)
-              ),
-              onPressed: resetGame,
             )
           ],
         ));

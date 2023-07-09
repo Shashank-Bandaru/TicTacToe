@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/vs_ai.dart';
 import 'two_player_page.dart';
 import 'vs_computer_page.dart';
 
@@ -32,8 +33,18 @@ class GameModePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => HomePage1()),
                 );
               },
-              child: Text('Versus Computer Mode'),
+              child: Text('Versus Computer Mode(easy)'),
             ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TicTacToeGame()),
+                );
+              },
+              child: Text('Versus Computer Mode(hard)'),
+            )
           ],
         ),
       ),

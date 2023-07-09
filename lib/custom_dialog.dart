@@ -7,7 +7,7 @@ class CustomDialog extends StatelessWidget {
   final actionText;
 
   CustomDialog(this.title, this.content, this.callback,
-      [this.actionText = "Reset"]);
+      [this.actionText = "reset"]);
   @override
   Widget build(BuildContext context) {
     return new AlertDialog(
